@@ -1,0 +1,12 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Compass -->
+  <path d="M256 32L128 288M256 32L384 288" stroke="white" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="256" cy="32" r="24" fill="white"/>
+  
+  <!-- Square -->
+  <path d="M160 224L256 320L352 224" stroke="white" stroke-width="32" stroke-linecap="square" stroke-linejoin="miter"/>
+  
+  <!-- G (Optional/Abstracted - Removing for pure geometry if preferred, but adding subtle G for complete symbol if Flat Design implies it. Keeping it strictly geometric as per first request, just the tools) -->
+  <!-- Crossbar of Compass -->
+  <path d="M160 180H352" stroke="white" stroke-width="12" stroke-linecap="round"/>
+</svg>

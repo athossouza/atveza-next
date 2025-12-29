@@ -40,6 +40,10 @@ const faqs = [
         answer: "IA sozinha (como um chatbot simples) apenas responde perguntas. A Orquestração de Agentes de IA, que implementamos, conecta a IA aos seus sistemas (ERP, CRM) para executar de tarefas: emitir boletos, agendar visitas, consultar estoques. É a diferença entre um atendente que só fala e um que resolve."
     },
     {
+        question: "O Que é o ATVEZA Manutenção?",
+        answer: "É nossa plataforma dedicada para gestão de ativos e serviços de campo (CMMS). Ela centraliza ordens de serviço, manutenção preventiva e inventário de peças. Diferente de softwares isolados, ele pode ser integrado ao seu canal de suporte, permitindo que um chamado de cliente dispare automaticamente uma OS para o técnico, com rastreabilidade total."
+    },
+    {
         question: "Quanto tempo para ver resultados?",
         answer: "O ATVEZA Method é desenhado para Quick Wins. Em 4 semanas, já identificamos gargalos de custo e implementamos automações que pagam o investimento inicial."
     },

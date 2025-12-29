@@ -5,6 +5,7 @@ import { FAQSection } from "@/components/faq-section";
 import { Footer } from "@/components/footer";
 import { AboutSection } from "@/components/about-section";
 import { PricingSection } from "@/components/pricing-section";
+import { CTASection } from "@/components/cta-section";
 
 export default function Home() {
   return (
@@ -14,9 +15,9 @@ export default function Home() {
         <header className="mb-8 flex justify-between items-center py-6 px-2">
           <div className="w-20 md:w-24">
             <img
-              src="https://lp.atveza.com/wp-content/uploads/2024/02/cropped-atveza-logo-03.png"
+              src="/images/logo.png"
               alt="ATVEZA"
-              className="w-full h-auto"
+              className="w-full h-auto opacity-90"
             />
           </div>
           <nav className="gap-6 text-sm text-neutral-400 hidden md:flex items-center">
@@ -46,6 +47,8 @@ export default function Home() {
       {/* <TestimonialsSection /> */}
 
       <FAQSection />
+
+      <CTASection />
 
       <Footer />
     </main>

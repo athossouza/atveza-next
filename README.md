@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ATVEZA Next.js Modernization 🚀
 
-## Getting Started
+A modern, high-performance reconstruction of the ATVEZA website, utilizing **Next.js 14**, **TypeScript**, and **Tailwind CSS**.
 
-First, run the development server:
+This project upgrades the original static HTML site into a dynamic React application with premium UI components, enhanced SEO capabilities, and a scalable architecture.
 
+## ✨ Key Features
+
+*   **Modern Tech Stack:** Built with Next.js (App Router), React, and TypeScript.
+*   **Premium UI:** Integrates Shadcn/UI, Framer Motion for animations, and Lucide React icons.
+*   **3D Elements:** Subtly integrated 3D interactions using Spline.
+*   **Automated Deployment:** Custom scripts to build and deploy to multiple FTP targets simultaneously (8+ domains).
+*   **SEO Optimized:** Automatic Sitemap generation, metadata management, and JSON-LD structured data.
+*   **Responsive Design:** Fully responsive layout with a deep blue premium theme (`#051426`).
+
+## 🛠️ Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/YOUR_USERNAME/atveza-next.git
+    cd atveza-next
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Run locally:**
+    ```bash
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## 📦 Build & Deploy
+
+This project uses a static export configuration for hosting on standard FTP servers.
+
+### 1. Build
+Generates the static `out/` folder:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Deploy (FTP)
+We use custom Node.js scripts to deploy to our specific FTP targets.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**⚠️ Security Note:** Password is **NEVER** stored in the code. It must be provided via environment variable.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Single Target Deployment:**
+```bash
+export FTP_PASSWORD='YOUR_PASSWORD' && node deploy_fix_final.js
+```
 
-## Learn More
+**Universal Deployment (All 8+ Domains):**
+This script updates all configured domains sequentially:
+```bash
+export FTP_PASSWORD='YOUR_PASSWORD' && node deploy_all.js
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 📂 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+*   `/app`: Next.js App Router pages and layouts.
+*   `/components`: Reusable UI components (Hero, Footer, Navbar, BentoGrid).
+*   `/components/ui`: Shadcn/UI primitive components (Button, Card, etc.).
+*   `/public`: Static assets (images, fonts, robots.txt).
+*   `deploy_*.js`: Deployment automation scripts.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔐 Security & Config
 
-## Deploy on Vercel
+*   **Environment Variables:** Create a `.env.local` file for local secrets (it is git-ignored).
+*   **FTP Credentials:** Managed via `process.env.FTP_PASSWORD` at runtime.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Developed by ATVEZA Innovation.*
