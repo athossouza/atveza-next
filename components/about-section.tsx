@@ -11,7 +11,7 @@ export function AboutSection() {
                         {/* Glow Effect behind image */}
                         <div className="absolute inset-0 bg-blue-500/20 blur-3xl rounded-full transform scale-75"></div>
 
-                        <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                        <div className="relative w-64 md:w-80 aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                             <img
                                 src="/images/athos.png"
                                 alt="Athos - Fundador ATVEZA"
