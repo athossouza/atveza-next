@@ -18,7 +18,7 @@ export default function Home() {
               className="w-full h-auto"
             />
           </div>
-          <nav className="gap-6 text-sm text-neutral-400 hidden md:flex">
+          <nav className="gap-6 text-sm text-neutral-400 hidden md:flex items-center">
             <a href="#" className="hover:text-white transition">Home</a>
             <a href="#" className="hover:text-white transition">Método</a>
             <a href="#" className="hover:text-white transition">Blog</a>
