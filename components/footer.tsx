@@ -17,6 +17,10 @@ export function Footer() {
                         </div>
                         <p className="text-sm">Inteligência Operacional em Suporte B2B.</p>
                         <p className="text-sm mt-1">&copy; 2025 ATVEZA Method.</p>
+                        <p className="text-xs mt-2 text-neutral-600">
+                            ATVEZA SERVICOS EM TECNOLOGIA LTDA <br />
+                            CNPJ: 48.761.773/0001-17
+                        </p>
                     </div>
 
                     <div className="flex gap-6">
