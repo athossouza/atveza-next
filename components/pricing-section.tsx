@@ -35,9 +35,8 @@ const tiers = [
             "Todo o escopo Evolution",
             "Desenvolvimento de Softwares Custom",
             "Orquestração de Agentes de IA",
-            "Automação de Processos Complexos (RPA)",
-            "Integrações via API Dedicadas",
-            "SLA de Atendimento Prioritário"
+            "Automação de Processos Complexos",
+            "Integrações via API Dedicadas"
         ],
         cta: "Falar sobre Enterprise",
         highlight: false,
