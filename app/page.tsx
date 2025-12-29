@@ -10,7 +10,7 @@ export default function Home() {
       <div className="w-full max-w-7xl mx-auto p-4">
         {/* Header Simples */}
         <header className="mb-8 flex justify-between items-center py-6 px-2">
-          <div className="w-28 md:w-32">
+          <div className="w-20 md:w-24">
             <img
               src="https://lp.atveza.com/wp-content/uploads/2024/02/cropped-atveza-logo-03.png"
               alt="ATVEZA"
