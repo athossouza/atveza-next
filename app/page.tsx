@@ -4,6 +4,7 @@ import { TestimonialsSection } from "@/components/testimonials";
 import { FAQSection } from "@/components/faq-section";
 import { Footer } from "@/components/footer";
 import { AboutSection } from "@/components/about-section";
+import { PricingSection } from "@/components/pricing-section";
 
 export default function Home() {
   return (
@@ -35,6 +36,9 @@ export default function Home() {
       {/* Seções de Conteúdo (Fundo Escuro Contínuo) */}
       <MethodBento />
       <AboutSection />
+
+      <PricingSection />
+
       {/* <TestimonialsSection /> */}
 
       <FAQSection />
