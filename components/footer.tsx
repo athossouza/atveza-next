@@ -8,7 +8,7 @@ export function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
 
                     <div className="text-center md:text-left">
-                        <div className="w-28 mx-auto md:mx-0 mb-4 bg-white p-2 rounded-lg">
+                        <div className="w-28 mx-auto md:mx-0 mb-4">
                             <img
                                 src="https://lp.atveza.com/wp-content/uploads/2024/02/cropped-atveza-logo-03.png"
                                 alt="ATVEZA"
