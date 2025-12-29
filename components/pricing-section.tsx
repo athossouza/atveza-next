@@ -95,9 +95,11 @@ export function PricingSection() {
                                 ))}
                             </ul>
 
-                            <button
+                            <a
+                                href="https://calendar.app.google/eEe6Uy2F3m1uy6in7"
+                                target="_blank"
                                 className={`
-                  w-full py-3 rounded-full font-semibold transition-all
+                  w-full py-3 rounded-full font-semibold transition-all text-center block
                   ${tier.highlight
                                         ? "bg-[#2C74B3] hover:bg-[#1a5c96] text-white shadow-lg"
                                         : "border border-white/20 hover:bg-white/10 text-white"
@@ -105,7 +107,7 @@ export function PricingSection() {
                 `}
                             >
                                 {tier.cta}
-                            </button>
+                            </a>
                         </div>
                     ))}
                 </div>

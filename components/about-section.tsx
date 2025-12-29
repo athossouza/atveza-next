@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Linkedin, MessageCircle } from "lucide-react";
 
 export function AboutSection() {
     return (
@@ -36,9 +37,28 @@ export function AboutSection() {
                             </p>
                         </div>
 
-                        <div className="pt-4">
+                        <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
                             <div className="inline-block px-4 py-2 border border-white/10 rounded-full bg-[#0A2647]/50 backdrop-blur-md">
                                 <span className="text-[#2C74B3] font-semibold">Founder & CEO</span> <span className="mx-2 text-neutral-600">|</span> ATVEZA Method
+                            </div>
+
+                            <div className="flex gap-4">
+                                <a
+                                    href="https://www.linkedin.com/in/athossouza/"
+                                    target="_blank"
+                                    className="p-2 rounded-full border border-white/10 hover:bg-[#0077b5]/20 hover:border-[#0077b5] transition text-neutral-400 hover:text-[#0077b5]"
+                                    aria-label="LinkedIn"
+                                >
+                                    <Linkedin className="w-5 h-5" />
+                                </a>
+                                <a
+                                    href="https://wa.me/5551994626084"
+                                    target="_blank"
+                                    className="p-2 rounded-full border border-white/10 hover:bg-[#25D366]/20 hover:border-[#25D366] transition text-neutral-400 hover:text-[#25D366]"
+                                    aria-label="WhatsApp"
+                                >
+                                    <MessageCircle className="w-5 h-5" />
+                                </a>
                             </div>
                         </div>
                     </div>

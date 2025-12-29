@@ -23,9 +23,13 @@ export default function Home() {
             <a href="#" className="hover:text-white transition">Home</a>
             <a href="#" className="hover:text-white transition">Método</a>
             <a href="#" className="hover:text-white transition">Blog</a>
-            <button className="px-4 py-2 rounded-full border border-neutral-700 hover:bg-white hover:text-black transition">
+            <a
+              href="https://calendar.app.google/eEe6Uy2F3m1uy6in7"
+              target="_blank"
+              className="px-4 py-2 rounded-full border border-neutral-700 hover:bg-white hover:text-black transition"
+            >
               Falar com Consultor
-            </button>
+            </a>
           </nav>
         </header>
 

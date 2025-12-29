@@ -47,7 +47,7 @@ const methodItems: BentoItem[] = [
 
 export function MethodBento() {
     return (
-        <section className="py-20 bg-[#051426] text-white">
+        <section id="solutions" className="py-20 bg-[#051426] text-white">
             <div className="container mx-auto px-4 text-center mb-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                     Ecossistema de Soluções

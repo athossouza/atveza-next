@@ -23,12 +23,19 @@ export function SplineSceneBasic() {
                         <strong>Orquestração de automações e agentes de IA</strong> para escalar sua operação B2B.
                     </p>
                     <div className="mt-8 flex gap-4">
-                        <button className="px-6 py-3 rounded-full bg-white text-black font-semibold hover:bg-neutral-200 transition">
+                        <a
+                            href="https://calendar.app.google/eEe6Uy2F3m1uy6in7"
+                            target="_blank"
+                            className="px-6 py-3 rounded-full bg-white text-black font-semibold hover:bg-neutral-200 transition"
+                        >
                             Falar com Especialista
-                        </button>
-                        <button className="px-6 py-3 rounded-full border border-neutral-700 text-white font-semibold hover:bg-neutral-900 transition">
+                        </a>
+                        <a
+                            href="#solutions"
+                            className="px-6 py-3 rounded-full border border-neutral-700 text-white font-semibold hover:bg-neutral-900 transition"
+                        >
                             Conhecer o Método
-                        </button>
+                        </a>
                     </div>
                 </div>
 
