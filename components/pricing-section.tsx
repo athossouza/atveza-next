@@ -23,10 +23,9 @@ const tiers = [
             "Acompanhamento Mensal (12 meses)",
             "Implementação do Método ATVEZA",
             "Mentoria para Lideranças de CX",
-            "Workshops de Treinamento",
-            "Setup Avançado de Zendesk"
+            "Workshops de Treinamento"
         ],
-        cta: "Inaiciar Transformação",
+        cta: "Iniciar Transformação",
         highlight: true, // Destaque visual
     },
     {
