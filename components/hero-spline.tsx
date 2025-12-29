@@ -19,7 +19,7 @@ export function SplineSceneBasic() {
                         Parceiros de Inovação <br /> Tecnológica
                     </h1>
                     <p className="mt-4 text-neutral-300 max-w-lg text-lg">
-                        Especialistas em tecnologias para gestão do atendimento.
+                        Especialistas em tecnologias para gestão do atendimento.{" "}
                         <strong>Orquestração de automações e agentes de IA</strong> para escalar sua operação B2B.
                     </p>
                     <div className="mt-8 flex gap-4">
