@@ -21,8 +21,8 @@ export default function Home() {
           </div>
           <nav className="gap-6 text-sm text-neutral-400 hidden md:flex items-center">
             <a href="#" className="hover:text-white transition">Home</a>
-            <a href="#" className="hover:text-white transition">Método</a>
-            <a href="#" className="hover:text-white transition">Blog</a>
+            <a href="#solutions" className="hover:text-white transition">Método</a>
+            <a href="https://atveza.substack.com/archive" target="_blank" className="hover:text-white transition">Blog</a>
             <a
               href="https://calendar.app.google/eEe6Uy2F3m1uy6in7"
               target="_blank"
