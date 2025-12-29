@@ -1,0 +1,37 @@
+import Link from "next/link";
+import { Linkedin, Instagram, Youtube } from "lucide-react";
+
+export function Footer() {
+    return (
+        <footer className="bg-black text-neutral-400 border-t border-neutral-900 py-12">
+            <div className="container mx-auto px-4">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+
+                    <div className="text-center md:text-left">
+                        <div className="w-32 mx-auto md:mx-0 mb-4 bg-white/10 p-2 rounded-lg backdrop-blur-sm">
+                            <img
+                                src="https://lp.atveza.com/wp-content/uploads/2024/02/cropped-atveza-logo-03.png"
+                                alt="ATVEZA"
+                                className="w-full h-auto brightness-0 invert"
+                            />
+                        </div>
+                        <p className="text-sm">Inteligência Operacional em Suporte B2B.</p>
+                        <p className="text-sm mt-1">&copy; 2025 ATVEZA Method.</p>
+                    </div>
+
+                    <div className="flex gap-6">
+                        <Link href="https://www.linkedin.com/in/athossouza/" target="_blank" className="hover:text-cyan-500 transition">
+                            <Linkedin className="w-6 h-6" />
+                        </Link>
+                        <Link href="https://www.instagram.com/atveza/" target="_blank" className="hover:text-purple-500 transition">
+                            <Instagram className="w-6 h-6" />
+                        </Link>
+                        <Link href="https://www.youtube.com/@ATVEZATechnology" target="_blank" className="hover:text-red-500 transition">
+                            <Youtube className="w-6 h-6" />
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
+}
