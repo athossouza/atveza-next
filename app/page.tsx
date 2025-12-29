@@ -35,7 +35,7 @@ export default function Home() {
       {/* Seções de Conteúdo (Fundo Escuro Contínuo) */}
       <MethodBento />
       <AboutSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
 
       <FAQSection />
 
