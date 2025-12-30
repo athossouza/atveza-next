@@ -1,7 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Linkedin, MessageCircle } from "lucide-react";
+import { dictionaries } from "@/lib/dictionaries";
 
-export function AboutSection() {
+interface AboutProps {
+    content?: typeof dictionaries.pt.about;
+}
+
+export function AboutSection({ content = dictionaries.pt.about }: AboutProps) {
     return (
         <section className="py-20 bg-[#051426] text-white overflow-hidden">
             <div className="container mx-auto px-4">
@@ -24,22 +29,21 @@ export function AboutSection() {
                     {/* Content Column */}
                     <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-white">
-                            Quem é <span className="text-[#2C74B3]">Athos</span>?
+                            {content.title} <span className="text-[#2C74B3]">{content.name}</span>?
                         </h2>
 
                         <div className="space-y-4 text-neutral-300 text-lg leading-relaxed">
                             <p>
-                                Especialista em Estratégia de Suporte e Zendesk.
-                                Minha missão é transformar departamentos de atendimento, muitas vezes vistos como "centro de custo", em operações de alta performance.
+                                {content.p1}
                             </p>
                             <p>
-                                Com o método ATVEZA, ajudo empresas a reduzir custos operacionais, automatizar processos repetitivos e elevar a satisfação do cliente (CSAT) a novos patamares.
+                                {content.p2}
                             </p>
                         </div>
 
                         <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
                             <div className="inline-block px-4 py-2 border border-white/10 rounded-full bg-[#0A2647]/50 backdrop-blur-md">
-                                <span className="text-[#2C74B3] font-semibold">Founder & CEO</span> <span className="mx-2 text-neutral-600">|</span> ATVEZA Method
+                                <span className="text-[#2C74B3] font-semibold">{content.role}</span> <span className="mx-2 text-neutral-600">|</span> {content.method_label}
                             </div>
 
                             <div className="flex gap-4">

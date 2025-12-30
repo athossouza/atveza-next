@@ -1,6 +1,11 @@
 import { ArrowRight } from "lucide-react";
+import { dictionaries } from "@/lib/dictionaries";
 
-export function CTASection() {
+interface CTAProps {
+    content?: typeof dictionaries.pt.cta;
+}
+
+export function CTASection({ content = dictionaries.pt.cta }: CTAProps) {
     return (
         <section className="py-24 relative overflow-hidden">
             {/* Background with Gradient */}
@@ -15,11 +20,11 @@ export function CTASection() {
 
             <div className="container mx-auto px-4 relative z-10 text-center">
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-                    Parceiros de <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2C74B3] to-[#60A5FA]">Inovação Tecnológica</span>
+                    {content.title_prefix} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2C74B3] to-[#60A5FA]">{content.title_gradient}</span>
                 </h2>
 
                 <p className="text-lg md:text-xl text-neutral-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-                    Especialistas em tecnologias para gestão do atendimento. Orquestração de automações e agentes de IA para escalar sua operação B2B.
+                    {content.description}
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -29,7 +34,7 @@ export function CTASection() {
                         rel="noopener noreferrer"
                         className="group relative inline-flex items-center gap-2 px-8 py-4 bg-white text-[#051426] rounded-full font-bold text-lg hover:bg-neutral-100 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]"
                     >
-                        Falar com Consultor
+                        {content.btn_primary}
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </a>
 
@@ -37,7 +42,7 @@ export function CTASection() {
                         href="#solutions"
                         className="px-8 py-4 rounded-full border border-white/20 text-white font-semibold hover:bg-white/5 transition-colors backdrop-blur-sm"
                     >
-                        Ver Soluções
+                        {content.btn_secondary}
                     </a>
                 </div>
             </div>

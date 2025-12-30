@@ -1,59 +1,27 @@
 
 import { Check } from "lucide-react";
+import { dictionaries } from "@/lib/dictionaries";
 
-const tiers = [
-    {
-        name: "Discovery",
-        description: "Diagnóstico tático para identificar gargalos e desenhar o mapa de evolução do seu suporte.",
-        features: [
-            "Diagnóstico Operacional Completo",
-            "Mapeamento de Processos",
-            "Plano de Ação Tático",
-            "3 Sessões de Orientação Estratégica",
-            "Análise de Stack Tecnológico"
-        ],
-        cta: "Começar Diagnóstico",
-        highlight: false,
-    },
-    {
-        name: "Evolution",
-        description: "Acompanhamento contínuo de 12 meses para implementar cultura, processos e tecnologia.",
-        features: [
-            "Todo o escopo Discovery",
-            "Acompanhamento Mensal (12 meses)",
-            "Implementação do Método ATVEZA",
-            "Mentoria para Lideranças de CX",
-            "Workshops de Treinamento"
-        ],
-        cta: "Iniciar Transformação",
-        highlight: true, // Destaque visual
-    },
-    {
-        name: "Enterprise",
-        description: "O nível máximo de personalização. Desenvolvimento de software e orquestração de IA sob medida.",
-        features: [
-            "Todo o escopo Evolution",
-            "Desenvolvimento de Softwares Custom",
-            "Orquestração de Agentes de IA",
-            "Automação de Processos Complexos",
-            "Integrações via API Dedicadas"
-        ],
-        cta: "Falar sobre Enterprise",
-        highlight: false,
-    },
-];
+interface PricingProps {
+    content?: typeof dictionaries.pt.pricing;
+}
 
-export function PricingSection() {
+export function PricingSection({ content = dictionaries.pt.pricing }: PricingProps) {
+    const tiers = content.tiers.map((tier, index) => ({
+        ...tier,
+        // We keep the highlight logic based on index 1 (Education/Evolution) being the middle one
+        highlight: index === 1
+    }));
+
     return (
         <section className="py-20 bg-[#051426] text-white">
             <div className="container mx-auto px-4">
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        Modelos de <span className="text-[#2C74B3]">Parceria</span>
+                        {content.title} <span className="text-[#2C74B3]">{content.highlight_title}</span>
                     </h2>
                     <p className="text-neutral-400 text-lg">
-                        Da orientação estratégica à construção de tecnologias exclusivas.
-                        Escolha como você quer acelerar sua operação.
+                        {content.subtitle}
                     </p>
                 </div>
 
@@ -73,7 +41,7 @@ export function PricingSection() {
                             {tier.highlight && (
                                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                                     <span className="bg-[#2C74B3] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-                                        Mais Escolhido
+                                        {content.most_popular}
                                     </span>
                                 </div>
                             )}

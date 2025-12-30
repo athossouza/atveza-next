@@ -49,6 +49,13 @@ export const metadata: Metadata = {
     images: ["/images/athos_wpp.png"],
     creator: "@atveza",
   },
+  alternates: {
+    canonical: './',
+    languages: {
+      'en': '/en',
+      'pt-BR': '/',
+    },
+  },
   robots: {
     index: true,
     follow: true,
@@ -68,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
