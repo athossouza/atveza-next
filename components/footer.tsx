@@ -4,8 +4,8 @@ import { Linkedin, Instagram, Youtube } from "lucide-react";
 export function Footer() {
     return (
         <footer className="bg-[#051426] text-neutral-400 border-t border-white/10 py-12 relative overflow-hidden">
-            {/* Marca D'água Centralizada - Masonic G (PNG) */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[220px] opacity-10 pointer-events-none mix-blend-overlay">
+            {/* Marca D'água - Canto Inferior Direito - Masonic G (PNG) */}
+            <div className="absolute bottom-4 right-4 w-[110px] h-[110px] opacity-50 pointer-events-none mix-blend-overlay">
                 <img
                     src="/images/masonic_g.png"
                     alt=""
