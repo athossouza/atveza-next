@@ -1,7 +1,14 @@
 import Link from "next/link";
 import { Linkedin, Instagram, Youtube } from "lucide-react";
 
-export function Footer() {
+interface FooterProps {
+    locale?: "pt" | "en";
+}
+
+export function Footer({ locale = "pt" }: FooterProps) {
+    const privacyLink = locale === "en" ? "/en/privacy" : "/privacy";
+    const privacyLabel = locale === "en" ? "Privacy Policy" : "Política de Privacidade";
+
     return (
         <footer className="bg-[#051426] text-neutral-400 border-t border-white/10 py-12 relative overflow-hidden">
             {/* Marca D'água - Canto Inferior Direito - Masonic G (PNG) */}
@@ -30,6 +37,12 @@ export function Footer() {
                             ATVEZA SERVICOS EM TECNOLOGIA LTDA <br />
                             CNPJ: 48.761.773/0001-17
                         </p>
+
+                        <div className="mt-4">
+                            <Link href={privacyLink} className="text-xs text-neutral-500 hover:text-blue-400 transition-colors underline decoration-neutral-700 underline-offset-4">
+                                {privacyLabel}
+                            </Link>
+                        </div>
                     </div>
 
                     <div className="flex gap-6">

@@ -95,7 +95,7 @@ export const dictionaries = {
             items: [
                 {
                     question: "Isso é uma consultoria de Zendesk?",
-                    answer: "Não apenas. Consultorias tradicionais configuram a ferramenta. Nós usamos a tecnologia (Zendesk e IA) como alavanca de inteligência operacional. Nosso foco é processo, estratégia e dinheiro no caixa — reduzindo custos ou aumentando o LTV."
+                    answer: "Não apenas. Consultorias tradicionais configuram a ferramenta. Nós usamos a tecnologia como alavanca de inteligência operacional. Nosso foco é processo, estratégia e dinheiro no caixa, reduzindo custos ou aumentando o LTV."
                 },
                 {
                     question: "Zendesk vale a pena para indústria?",
@@ -140,6 +140,37 @@ export const dictionaries = {
                 {
                     question: "Serve para quem não usa Zendesk?",
                     answer: "Sim. Nossos pilares de Gestão de Suporte B2B se aplicam a qualquer ferramenta. O método é agnóstico à plataforma, embora tenhamos profunda expertise técnica em preparar o Zendesk para alta performance."
+                }
+            ]
+        },
+        privacy: {
+            title: "Política de Privacidade",
+            last_updated: "Última atualização: 02 de Janeiro de 2026",
+            intro: "A ATVEZA Technology (\"Nós\") valoriza sua privacidade. Esta política descreve como coletamos, usamos e protegemos suas informações ao utilizar nosso site e nossos serviços automatizados (Bots/Apps no ecossistema Meta).",
+            sections: [
+                {
+                    heading: "1. Coleta de Dados",
+                    content: "Coletamos informações que você nos fornece diretamente, como nome, e-mail e número de telefone ao preencher formulários ou interagir com nossos chatbots no Instagram e WhatsApp. Também podemos coletar dados técnicos de navegação (cookies) para melhorar a performance do site."
+                },
+                {
+                    heading: "2. Uso das Informações",
+                    content: "Utilizamos seus dados para: (a) Fornecer os serviços de consultoria e suporte contratados; (b) Responder às suas solicitações via Chatbot; (c) Enviar comunicações institucionais relevantes (você pode cancelar a qualquer momento)."
+                },
+                {
+                    heading: "3. Integração com Meta (Instagram/WhatsApp)",
+                    content: "Ao interagir com nosso bot no Instagram/WhatsApp, processamos suas mensagens e informações de perfil público estritamente para executar a automação do atendimento. Não vendemos nem compartilhamos esses dados com terceiros para fins publicitários."
+                },
+                {
+                    heading: "4. Seus Direitos (LGPD/GDPR)",
+                    content: "Você tem direito a acessar, corrigir ou solicitar a exclusão de seus dados pessoais a qualquer momento. Para exercer esses direitos, entre em contato conosco."
+                },
+                {
+                    heading: "5. Exclusão de Dados",
+                    content: "Para solicitar a remoção completa de seus dados de nossa base (incluindo histórico de conversas com o Bot), envie um e-mail para contato@atveza.com com o assunto 'Exclusão de Dados'. Atenderemos sua solicitação em até 72 horas."
+                },
+                {
+                    heading: "6. Contato",
+                    content: "Dúvidas sobre esta política podem ser enviadas para contato@atveza.com."
                 }
             ]
         }
@@ -239,7 +270,7 @@ export const dictionaries = {
             items: [
                 {
                     question: "Is this a Zendesk consultancy?",
-                    answer: "Not just that. Traditional consultancies configure the tool. We use technology (Zendesk and AI) as a lever for operational intelligence. Our focus is process, strategy, and cash flow — reducing costs or increasing LTV."
+                    answer: "Not just that. Traditional consultancies configure the tool. We use technology as a lever for operational intelligence. Our focus is process, strategy, and cash flow — reducing costs or increasing LTV."
                 },
                 {
                     question: "Is Zendesk worth it for industry?",
@@ -284,6 +315,37 @@ export const dictionaries = {
                 {
                     question: "Does it work for those not using Zendesk?",
                     answer: "Yes. Our pillars of B2B Support Management apply to any tool. The method is platform-agnostic, although we have deep technical expertise in preparing Zendesk for high performance."
+                }
+            ]
+        },
+        privacy: {
+            title: "Privacy Policy",
+            last_updated: "Last updated: January 02, 2026",
+            intro: "ATVEZA Technology (\"We\") values your privacy. This policy describes how we collect, use, and protect your information when using our website and automated services (Bots/Apps in the Meta ecosystem).",
+            sections: [
+                {
+                    heading: "1. Data Collection",
+                    content: "We collect information you provide directly, such as name, email, and phone number when filling out forms or interacting with our chatbots on Instagram and WhatsApp. We may also collect technical browsing data (cookies) to improve site performance."
+                },
+                {
+                    heading: "2. Use of Information",
+                    content: "We use your data to: (a) Provide the contracted consulting and support services; (b) Respond to your requests via Chatbot; (c) Send relevant institutional communications (you may opt-out at any time)."
+                },
+                {
+                    heading: "3. Meta Integration (Instagram/WhatsApp)",
+                    content: "When interacting with our bot on Instagram/WhatsApp, we process your messages and public profile information strictly to execute service automation. We do not sell or share this data with third parties for advertising purposes."
+                },
+                {
+                    heading: "4. Your Rights",
+                    content: "You have the right to access, correct, or request the deletion of your personal data at any time. To exercise these rights, please contact us."
+                },
+                {
+                    heading: "5. Data Deletion",
+                    content: "To request the complete removal of your data from our database (including Bot conversation history), send an email to contato@atveza.com with the subject 'Data Deletion'. We will fulfill your request within 72 hours."
+                },
+                {
+                    heading: "6. Contact",
+                    content: "Questions about this policy can be sent to contato@atveza.com."
                 }
             ]
         }

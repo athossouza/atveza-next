@@ -1,3 +1,4 @@
+require('dotenv').config();
 const ftp = require("basic-ftp");
 const { execSync } = require("child_process");
 
