@@ -1,107 +1,87 @@
 # ATVEZA Next.js Platform 🚀
 
-A modern, scalable web platform built with **Next.js 14**, **TypeScript**, and **Tailwind CSS**. 
+![ATVEZA](public/images/logo.png)
 
-This project goes beyond a simple website; it is a **Multi-Tenant System** capable of generating multiple variations of the site (Personal Brand, Consultancy, Landing Pages) from a single codebase, managing content in multiple languages (i18n), and deploying automatically to distinct FTP servers.
+> **Parceiros de inovação tecnológica.**
+> Especialistas em tecnologias para gestão do atendimento. Orquestração de automações e agentes de IA para escalar sua operação B2B.
 
----
+## 🚀 Sobre o Projeto
 
-## ✨ System Architecture
+Este repositório contém o ecossistema digital da [ATVEZA](https://atveza.com).
+Modernizado de uma estrutura estática para **Next.js 14**, o projeto é um **Sistema Multi-Tenant** capaz de gerar múltiplas variações do site (Marca Pessoal, Consultoria, Landing Pages) a partir de um único código-base.
 
-### 1. Multi-Tenant / Multi-Domain Strategy
-Instead of maintaining 10 different repositories for 10 similar sites, we use a single codebase.
-*   **Concept:** A single environment variable (`NEXT_PUBLIC_SITE_VARIANT`) dictates how the site behaves during the build.
-*   **Mechanism:**
-    *   `lib/seo-config.ts` stores the SEO configuration (Title, Description) for each identity (e.g., 'consultoria', 'personal', 'default').
-    *   When we run `npm run build`, Next.js bakes the specific configuration into the static HTML.
-    *   This allows `athos.cx` (Personal) and `atveza.com` (Corporate) to share the same components but look like distinct, tailored sites.
+### Stack Tecnológico
 
-### 2. Internationalization (i18n) for Static Hosting
-Since we deploy to **FTP (Apache/Nginx static hosting)**, we cannot use server-side middleware for language detection. We implemented a **Hybrid Static i18n Strategy**:
-
-*   **Dictionary Pattern:** All text content is centralized in `lib/dictionaries.ts`.
-    *   `components/hero.tsx` doesn't optimize text; it accepts a `content` prop.
-    *   `app/page.tsx` injects Portuguese content (Default).
-    *   `app/en/page.tsx` injects English content.
-*   **Smart Auto-Redirect:**
-    *   A client-side component (`LanguageRedirect`) checks the user's browser language (`navigator.language`).
-    *   If the user is not Portuguese-speaking, they are automatically redirected to `/en`.
-    *   **Loop Protection:** If the user manually switches languages (via the Header button), we save this preference in `localStorage` and stop auto-redirecting.
+*   **Framework:** [Next.js 14](https://nextjs.org/) (App Router, Turbopack)
+*   **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
+*   **Estilização:** [Tailwind CSS](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/)
+*   **Animações:** [Framer Motion](https://www.framer.com/motion/) + [Spline](https://spline.design/) (3D)
+*   **Deploy:** Pipeline CI/CD customizado para FTP (Node.js)
 
 ---
 
-## 🛠️ Installation & Setup
+## 🌐 Estrutura Multi-Domínio
 
-If you want to replicate this structure:
+O sistema gerencia identificadores de SEO e assets dinamicamente durante o build (`NEXT_PUBLIC_SITE_VARIANT`), permitindo o deploy de identidades visuais distintas:
 
-1.  **Clone the repository:**
+| Variante | Domínios Principais | Foco |
+| :--- | :--- | :--- |
+| **Default** | `atveza.com` | Institucional Corporativo |
+| **Personal** | `athos.cx` | Marca Pessoal (Athos Alves) |
+| **Consultoria** | `consultoria.cx` | Serviços de Consultoria |
+| **Mentoria** | `mentoria.cx` | Programas de Mentoria |
+
+---
+
+## ✨ Arquitetura do Sistema
+
+### 1. Estratégia Multi-Tenant
+Em vez de manter repositórios separados, usamos um único codebase.
+*   `lib/seo-config.ts` armazena a configuração de SEO para cada identidade.
+*   O build injeta a configuração específica no HTML estático.
+
+### 2. Internacionalização (i18n) Híbrida
+Como o deploy é em hospedagem estática (FTP), implementamos uma estratégia sem middleware server-side:
+*   **Dicionários:** Textos centralizados em `lib/dictionaries.ts`.
+*   **Rotas:** `/` (PT) e `/en` (EN).
+*   **Auto-Redirect:** Componente client-side que detecta o idioma do navegador e redireciona (com proteção de loop via `localStorage`).
+
+---
+
+## 🛠️ Instalação e Uso
+
+1.  **Clone o repositório:**
     ```bash
     git clone https://github.com/athossouza/atveza-next.git
     cd atveza-next
     ```
 
-2.  **Install dependencies:**
+2.  **Instale as dependências:**
     ```bash
     npm install
     ```
 
-3.  **Run locally:**
+3.  **Rode localmente:**
     ```bash
     npm run dev
     ```
-    *   Access **[http://localhost:3000](http://localhost:3000)** (Portuguese)
-    *   Access **[http://localhost:3000/en](http://localhost:3000/en)** (English)
+    *   Acesse: [http://localhost:3000](http://localhost:3000)
 
----
+## 🚀 Pipeline de Deploy (FTP)
 
-## 🚀 Deployment Pipeline (FTP Automation)
+Utilizamos um script customizado `deploy_all.js` para gerenciar builds massivos.
 
-We use a custom Node.js pipeline (`deploy_all.js`) to manage builds and deployments for **11+ domains** simultaneously.
-
-### How it works:
-1.  **Grouping:** The script groups targets by their "Variant". For example, `athos.cx` and `athossouza.com.br` are both `personal`.
-2.  **Efficient Build:** It builds the project **once** per variant (instead of once per domain).
-    *   *Builds "personal" -> Deploys to `athos.cx` -> Deploys to `athossouza.com.br`.*
-3.  **Upload:** Uses `basic-ftp` to upload the static `out/` folder to the `public_html` of the target server.
-
-### Commands
-
-**1. Universal Deploy (All Sites)**
-This will rebuild and deploy the entire ecosystem.
+**Comando de Deploy:**
 ```bash
-export FTP_PASSWORD='YOUR_FTP_PASSWORD'
+# Crie um arquivo .env com: FTP_PASSWORD="sua_senha"
 node deploy_all.js
 ```
 
-**2. Updates to Deployment Logic**
-To add a new site, edit `deploy_all.js` and add an entry to the `targets` array:
-```javascript
-{ user: "ftp.newsite.com", name: "newsite.com", variant: "consultoria" }
-```
+O script:
+1.  Agrupa alvos por variante (evita rebuilds desnecessários).
+2.  Compila o projeto para a variante específica.
+3.  Faz upload via FTP para múltiplos servidores simultaneamente.
 
 ---
 
-## 📂 Project Structure
-
-*   `app/`
-    *   `page.tsx`: Main entry point (Injects PT content).
-    *   `en/page.tsx`: English entry point (Injects EN content).
-    *   `layout.tsx`: Root layout with Dynamic SEO meta-tags.
-*   `components/`
-    *   `ui/`: Base UI elements (Buttons, Cards - shadcn/ui).
-    *   `header.tsx`: Header with Language Switcher.
-    *   `language-redirect.tsx`: Logic for client-side auto-redirect.
-*   `lib/`
-    *   `dictionaries.ts`: The "Database" of all text content (PT/EN).
-    *   `seo-config.ts`: Configuration for Multi-Tenant SEO identities.
-*   `deploy_all.js`: The heart of the automated deployment system.
-
----
-
-## 🔐 Configuration & Secrets
-
-*   **Trailing Slash:** Crucial for static hosting. In `next.config.ts`, we set `trailingSlash: true` so Next.js generates `/en/index.html` instead of `/en.html`, avoiding 403 errors on standard web servers.
-*   **FTP Credentials:** Never store passwords in git. Always pass `FTP_PASSWORD` as an environment variable at runtime.
-
----
-*Developed by ATVEZA Innovation.*
+Desenvolvido por **Athos Alves** | [LinkedIn](https://linkedin.com/in/athosalves)
